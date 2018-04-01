@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "reserve",
+            "otherEntityName": "reserve",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "shippingMethod"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "shippingId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180331151158",
+    "entityTableName": "shipping_method",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

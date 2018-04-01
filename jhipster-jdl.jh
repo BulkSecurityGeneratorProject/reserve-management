@@ -1,0 +1,61 @@
+entity ShoppingCart {
+	created Instant
+}
+
+entity Customer {
+	firstName String,
+    lastName String,
+	address String,
+    billingAddress String,
+    deliveryAddress1 String required,
+    deliveryAddress2 String required
+}
+
+entity Admin {
+    name String,
+    email String
+}
+
+entity Reserve {
+	status ReserveState required,
+    paymentType PaymentMethod required,
+    dateCreated Instant
+}
+
+entity Product {
+	name String,
+    unitPrice Long,
+    stock Long
+}
+
+entity ReserveLine {
+	quantity Integer,
+    shippingNumber String,
+    total Long
+}
+
+entity Category {
+    name String
+}
+
+enum PaymentMethod {
+    TRANSFER, CREDIT_CARD
+}
+
+enum ReserveState {
+	NEW, PACKED, DELIVERED, CLOSED
+}
+
+relationship OneToMany {
+	Customer{reserve} to Reserve{customer},
+    Reserve{reserveline} to ReserveLine,
+    ShoppingCart{reserveline} to ReserveLine,
+    Product{reserveline} to ReserveLine,
+    Customer{shoppingcart} to ShoppingCart,
+    Admin{reserve} to Reserve{admin}
+}
+
+relationship ManyToMany {
+	Product{category} to Category
+}
+

@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "reserve",
+            "otherEntityName": "reserve",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "shippingaddress"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "addressId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "geocode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "street1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "street2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pobox",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180331151159",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "shipping_address",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

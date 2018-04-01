@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reserveline",
+            "otherEntityName": "reserveLine",
+            "otherEntityRelationshipName": "shoppingCart"
+        },
+        {
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "created",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180331235849",
+    "entityTableName": "shopping_cart",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

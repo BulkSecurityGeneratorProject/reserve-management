@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reserveline",
+            "otherEntityName": "reserveLine",
+            "otherEntityRelationshipName": "reserve"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "admin",
+            "otherEntityName": "admin",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "ReserveState",
+            "fieldValues": "NEW,PACKED,DELIVERED,CLOSED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "paymentType",
+            "fieldType": "PaymentMethod",
+            "fieldValues": "TRANSFER,CREDIT_CARD",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180331151153",
+    "entityTableName": "reserve",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

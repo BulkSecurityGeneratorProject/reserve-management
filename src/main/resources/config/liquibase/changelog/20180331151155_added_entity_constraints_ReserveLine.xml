@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ReserveLine.
+    -->
+    <changeSet id="20180331151155-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="shopping_cart_id"
+                                 baseTableName="reserve_line"
+                                 constraintName="fk_reserve_line_shopping_cart_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shopping_cart"/>
+
+        <addForeignKeyConstraint baseColumnNames="reserve_id"
+                                 baseTableName="reserve_line"
+                                 constraintName="fk_reserve_line_reserve_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reserve"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="reserve_line"
+                                 constraintName="fk_reserve_line_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+    </changeSet>
+</databaseChangeLog>
