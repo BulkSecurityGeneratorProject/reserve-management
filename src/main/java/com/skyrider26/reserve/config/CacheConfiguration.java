@@ -42,6 +42,24 @@ public class CacheConfiguration {
             cm.createCache(com.skyrider26.reserve.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.skyrider26.reserve.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.skyrider26.reserve.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Customer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Customer.class.getName() + ".reserves", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Customer.class.getName() + ".shippingaddresses", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Admin.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Reserve.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Reserve.class.getName() + ".reservelines", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Product.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Product.class.getName() + ".categories", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.ReserveLine.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.PaymentMethod.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.ShippingMethod.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.ShippingAddress.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Customer.class.getName() + ".shoppingcarts", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Admin.class.getName() + ".reserves", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.Product.class.getName() + ".reservelines", jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.ShoppingCart.class.getName(), jcacheConfiguration);
+            cm.createCache(com.skyrider26.reserve.domain.ShoppingCart.class.getName() + ".reservelines", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

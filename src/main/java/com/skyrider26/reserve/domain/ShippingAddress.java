@@ -1,6 +1,5 @@
 package com.skyrider26.reserve.domain;
 
-import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -10,9 +9,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * not an ignored comment
+ * A ShippingAddress.
  */
-@ApiModel(description = "not an ignored comment")
 @Entity
 @Table(name = "shipping_address")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -50,6 +48,9 @@ public class ShippingAddress implements Serializable {
 
     @Column(name = "postal_code")
     private String postalCode;
+
+    @ManyToOne
+    private Customer customer;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -179,6 +180,19 @@ public class ShippingAddress implements Serializable {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public ShippingAddress customer(Customer customer) {
+        this.customer = customer;
+        return this;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public Reserve getReserve() {
